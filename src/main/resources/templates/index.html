@@ -1,11 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Portal</title>
-</head>
-<body>
-    <h1>Welcome to Job Portal</h1>
-</body>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <title>Login Dev Jobs</title>
+
+        <!-- Bootstrap -->
+        <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css} "/>
+        <!-- Font Awesome -->
+        <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/font-awesome.min.css}"/>
+        <!-- Custom CSS -->
+        <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/styles.css}"/>
+        <meta charset="ISO-8859-1">
+    </head>
+
+    <body class="background">
+        <!-- Header -->
+        <nav class="main_div">
+            <div class="logo_left">
+                <label class="logo">
+                    DevJobs
+                </label>
+                <label class="logo_com">
+                    .com
+                </label>
+            </div>
+            <div class="logo_right">
+                <label class="Candidate_login_btn">
+                    <a th:href="@{/login}">
+                        Login do Candidato
+                    </a>
+                    <a href="@{register}">
+                        /Cadastro
+                    </a>
+                    <label class="Candidate_login_btn">
+                    <a th:href="@{/login}">
+                        Login do Recrutador
+                    </a>
+                    <a href="@{register}">
+                        /Cadastro
+                    </a>
+                </label>
+            </div>
+        </nav>
+
+        <!-- Main - Área de busca  -->
+        <form th:action="@{/global-search/}">
+            <div class="searchBox">
+                <div class="inner">
+                    <input
+                        type="text"
+                        placeholder="Procure por uma vaga"
+                        name="job"
+                        th:value="${job}"
+                    />
+
+                    <input
+                        type="text"
+                        placeholder="Insira um local"
+                        name="location"
+                        th:value="${location}"
+                    />
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Footer -->
+        <footer>
+            <label class="copy-right">Copyright © hotdevjobs.com</label>
+        </footer>
+    </body>
+
+    <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
 </html>
